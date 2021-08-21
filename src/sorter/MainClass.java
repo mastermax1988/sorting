@@ -6,13 +6,14 @@ import java.util.Random;
 public class MainClass {
 
   public static void main(String[] args) {
-    int a[] = new int[10000];
+    int a[] = new int[20];
     Random rnd = new Random();
     for(int i = 0 ; i<a.length;i++){
       a[i] = rnd.nextInt(Integer.MAX_VALUE);
     }
 
-    Sorter sorter = new Bubblesort();
+    //Sorter sorter = new Bubblesort();
+    Sorter sorter = new Insertionsort();
     sorter.sort(a);
 
     for(int i=0;i<a.length-1;i++){
