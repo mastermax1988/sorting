@@ -12,22 +12,29 @@ public class Mergesort implements Sorter {
       int m = (r + l) / 2;
       mergesort(a, h, l, m);
       mergesort(a, h, m + 1, r);
+      merge(a, h, l, m, r);
+    }
+  }
 
-      for (int i = l; i <= m; i++) {
-        h[i] = a[i];
-      }
-      for (int i = m + 1; i <= r; i++) {
-        h[i] = a[i];
-      }
-      int l2 = l;
-      int r2 = m + 1;
-      for (int i = l; i <= r; i++) {
-        if (r2 > r || (l2 <= m && h[l2] < h[r2])) {
-          a[i] = h[l2++];
-        } else {
-          a[i] = h[r2++];
-        }
+  private void merge(int[] a, int[] h, int l, int m, int r) {
+    int l2 = l;
+    int r2 = m + 1;
+    int i = l;
+    System.arraycopy(a, l, h, l, m + 1 - l);
+    System.arraycopy(a, m + 1, h, m + 1, r + 1 - (m + 1));
+    while (l2 <= m && r2 <= r) {
+      if (h[l2] < h[r2]) {
+        a[i++] = h[l2++];
+      } else {
+        a[i++] = h[r2++];
       }
     }
+    while (l2 <= m) {
+      a[i++] = h[l2++];
+    }
+    while (r2 < r) {
+      a[i++] = h[r2++];
+    }
+
   }
 }
