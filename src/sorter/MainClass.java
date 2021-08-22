@@ -15,7 +15,8 @@ public class MainClass {
 
     //Sorter sorter = new Bubblesort();
     //Sorter sorter = new Insertionsort();
-    Sorter sorter = new Mergesort();
+    //Sorter sorter = new Insertionsort();
+    Sorter sorter = new Quicksort();
     sorter.sort(a);
 
     for (int i = 0; i < a.length; i++) {
