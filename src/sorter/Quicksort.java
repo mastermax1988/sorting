@@ -17,9 +17,10 @@ public class Quicksort implements Sorter {
   }
 
   private int divide(int[] a, int l, int r) {
-    int m = (l+r)/2;
+    /*int m = (l+r)/2;
     int pivot = a[m];
-    Util.swap(a,m,r);
+    Util.swap(a,m,r);*/
+    int pivot = a[r];
     int index = l;
     for(int i=l;i<r;i++){
       if(a[i]<pivot){

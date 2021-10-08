@@ -9,6 +9,7 @@ public class Mergesort implements Sorter {
 
   private void mergesort(int[] a, int[] h, int l, int r) {
     if (l < r) {
+      System.out.println("Sort von  " + l + " bis " + r);
       int m = (r + l) / 2;
       mergesort(a, h, l, m);
       mergesort(a, h, m + 1, r);
@@ -17,6 +18,7 @@ public class Mergesort implements Sorter {
   }
 
   private void merge(int[] a, int[] h, int l, int m, int r) {
+    System.out.println("Merge von " + l +  " bis " + r);
     int l2 = l;
     int r2 = m + 1;
     int i = l;
